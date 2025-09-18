@@ -1,0 +1,93 @@
+:root {
+  --bg: #f9f9f9;  
+  --card: #ffffff;    
+  --accent: #c60024;  
+  --accent-dark: #a0001d; 
+  --text: #111;       
+  --muted: #555;      
+}
+}
+*{box-sizing:border-box;font-family:Inter, system-ui, Arial, sans-serif}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--text)}
+.container{max-width:1100px;margin:0 auto;padding:1rem}
+.site-header{background:linear-gradient(90deg,var(--card),#eef4ff);box-shadow:0 2px 8px rgba(17,24,39,0.04);position:sticky;top:0;z-index:10}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0}
+.logo{text-decoration:none;font-weight:700;letter-spacing:1px;color:var(--accent)}
+.nav{display:block}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
+.nav a{text-decoration:none;padding:0.5rem 0.75rem;border-radius:8px;color:var(--text)}
+.nav a:hover{background:rgba(43,140,255,0.08);transform:translateY(-3px);transition:all 180ms ease}
+.nav-toggle-label{display:none;cursor:pointer}
+.nav-toggle-label span, .nav-toggle-label span::before, .nav-toggle-label span::after{display:block;width:24px;height:2px;background:var(--text);position:relative}
+.nav-toggle-label span::before, .nav-toggle-label span::after{content:'';position:absolute;left:0}
+.nav-toggle-label span::before{top:-7px}
+.nav-toggle-label span::after{top:7px}
+#nav-toggle, #nav-toggle-2, #nav-toggle-3{display:none}
+
+
+.hero{padding:3rem 0;text-align:center}
+.hero h1{font-size:2rem;margin:0 0 0.5rem}
+.lead{color:var(--muted);margin-bottom:1rem}
+.btn{display:inline-block;padding:0.7rem 1rem;border-radius:10px;text-decoration:none;background:var(--accent);color:#fff;font-weight:600;border:none;cursor:pointer}
+.btn:hover{background:var(--accent-dark);transform:translateY(-3px)}
+
+
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:2rem 0}
+.card{background:var(--card);padding:1.25rem;border-radius:var(--radius);box-shadow:0 6px 18px rgba(12,16,20,0.06);transition:transform 220ms ease,box-shadow 220ms ease}
+.card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(12,16,20,0.08)}
+
+
+.main-content{padding:1.5rem 0}
+.site-footer{padding:1rem 0;text-align:center;color:var(--muted)}
+.small-links a{text-decoration:none;color:var(--muted)}
+
+
+.contact-form{max-width:600px;margin:1rem 0 3rem;display:flex;flex-direction:column;gap:0.75rem}
+.contact-form input,.contact-form textarea{padding:0.75rem;border-radius:8px;border:1px solid #e6eef8;background:transparent}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 6px 18px rgba(43,140,255,0.12)}
+
+
+.team{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.team-item{background:var(--card);padding:1rem;border-radius:10px}
+
+
+@media (max-width:900px){
+.features{grid-template-columns:repeat(2,1fr)}
+.team{grid-template-columns:1fr}
+}
+
+
+@media (max-width:700px){
+.nav{position:absolute;right:1rem;top:72px;background:var(--card);padding:1rem;border-radius:10px;display:none;box-shadow:0 10px 30px rgba(12,16,20,0.06)}
+.nav ul{flex-direction:column}
+.nav-toggle-label{display:block}
+#nav-toggle:checked ~ .nav{display:block}
+#nav-toggle-2:checked ~ .nav{display:block}
+#nav-toggle-3:checked ~ .nav{display:block}
+.features{grid-template-columns:1fr}
+.hero h1{font-size:1.5rem}
+}
+
+
+@keyframes floatUp{
+0%{transform:translateY(6px);opacity:0}
+100%{transform:translateY(0);opacity:1}
+}
+.hero{animation:floatUp 600ms ease-out}
+
+
+a{transition:color 160ms ease}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* поравнање на леву страну */
+  gap: 20px; /* размак између грба и навигације/хамбургера */
+}
+
+.logo {
+  width: 100px;  /* величина грба */
+  height: auto;
+}
+.nav {
+  margin-left: auto;
+}
