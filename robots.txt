@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gazdaaa.github.io/DaniloGazdicVD2026/sitemap.xml
